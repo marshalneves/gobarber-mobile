@@ -5,7 +5,7 @@ import logo from '~/assets/logo.png';
 import Background from '~/components/Background';
 import * as S from './styles';
 
-export default function SignIn() {
+export default function SignIn({ navigation }) {
   return (
     <Background>
       <S.Container>
@@ -21,13 +21,13 @@ export default function SignIn() {
           <S.FormInput
             icon="lock-outline"
             secureTextEntry
-            placeholder="E-mail"
+            placeholder="Password"
           />
 
           <S.SubmitButton onPress={() => {}}>Acessar</S.SubmitButton>
         </S.Form>
 
-        <S.SignLink onPress={() => {}}>
+        <S.SignLink onPress={() => navigation.navigate('SignUp')}>
           <S.SignLinkText>Criar conta gratuita</S.SignLinkText>
         </S.SignLink>
       </S.Container>

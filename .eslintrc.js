@@ -48,5 +48,10 @@ module.exports = {
         rootPathSuffix: "src"
       }
     }
+  },
+  globals: {
+   "__CLIENT__": true,
+    "__SERVER__": true,
+    "__DEV__": true
   }
 };

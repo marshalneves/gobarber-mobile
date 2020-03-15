@@ -48,10 +48,7 @@ export default function SignIn({ navigation }) {
             onChangeText={setPassword}
           />
 
-          <S.SubmitButton
-            disabled={!loading}
-            loading={loading}
-            onPress={handleSubmit}>
+          <S.SubmitButton loading={loading} onPress={handleSubmit}>
             Acessar
           </S.SubmitButton>
         </S.Form>

@@ -1,4 +1,4 @@
-import { takeLatest, all, call, put } from 'redux-saga/effects';
+import { takeLatest, all, call, put, delay } from 'redux-saga/effects';
 import { Alert } from 'react-native';
 import api from '~/services/api';
 import { signInSuccess, signFailure } from './actions';
@@ -20,6 +20,8 @@ export function* signIn({ payload }) {
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
+    yield delay(3000);
+
     yield put(signInSuccess(token, user));
     // history.push('/dashboard');
   } catch (error) {
@@ -36,7 +38,6 @@ export function* signUp({ payload }) {
       name,
       email,
       password,
-      provider: true,
     });
 
     Alert.alert('Success', 'Account has been created with success.');
